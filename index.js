@@ -12,3 +12,7 @@ const app = express();
 app.get('/produto/1', (req, res) => {
     res.send(jsonProduto);
 })
+
+app.listen(8080, () => {
+    console.log('Server iniciado!');
+})

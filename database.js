@@ -1,6 +1,5 @@
-const produto = {
-    nome: 'Samsung S8',
-    preco: 1.099
-}
+let celular = '(21)99999-9999';
 
-export default produto
+let valido = (celular.length === 14) ? true : false;
+
+console.log(valido);
