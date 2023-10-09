@@ -1,18 +1,16 @@
-const produto = {
-    nome: 'Samsung S8',
-    preco: 1.099
-}
-
-const jsonProduto = JSON.stringify(produto);
-
 const express = require('express');
-
 const app = express();
 
-app.get('/produto/1', (req, res) => {
-    res.send(jsonProduto);
+const produto = {
+    nome: 'Samsung S7',
+    preco: 1500,
+    marca: 'Samsumg'
+};
+
+app.get('/', (req, res) => {
+    res.json(produto);
 })
 
-app.listen(8080, () => {
+app.listen(80, () => {
     console.log('Server iniciado!');
 })
