@@ -19,11 +19,13 @@ const produto = {
 };
 
 app.get("/", (req, res) => {
-    console.log(req.query);
-    res.json(produto);
+    const query = req.query
+    const peso = req.query.peso
+    const altura = req.query.altura
+    res.json({query});
 })
 
-app.listen(5050, () => {
+app.listen(8080, () => {
     console.log('Server iniciado!');
 })
 
