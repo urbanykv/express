@@ -4,7 +4,7 @@ const cors = require('cors');
 
 
 const corsOptions = {  
-    origin: "http://127.0.0.1:5500",  
+    origin: "*",  
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",  
     credentials: true,   
     optionsSuccessStatus: 204  
@@ -19,10 +19,9 @@ const produto = {
 };
 
 app.get("/", (req, res) => {
-    const query = req.query
-    const peso = req.query.peso
-    const altura = req.query.altura
-    res.json({query});
+    const q = req.query.peso
+    console.log(q);
+    res.json({q});
 })
 
 app.listen(8080, () => {
