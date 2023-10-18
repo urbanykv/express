@@ -12,16 +12,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-const produto = {
-    nome: 'Samsung S7',
-    preco: 1500,
-    marca: 'Samsung'
-};
-
 app.get("/", (req, res) => {
-    const q = req.query.peso
-    console.log(q);
-    res.json({q});
+    const peso = req.query.peso;
+    const altura = req.query.altura;
+    let imc = peso / (altura * altura);
+    res.json({imc: imc});
 })
 
 app.listen(8080, () => {
